@@ -5,3 +5,7 @@ __pycache__/
 venv/
 .venv/
 *.pyc
+scratch/
+*.png
+ascii.txt
+test_*.py

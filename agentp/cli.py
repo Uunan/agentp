@@ -42,15 +42,35 @@ if sys.platform.startswith("win"):
     except Exception:
         pass
 
+PERRY_ASCII = r"""                              %#%
+                           %%%%%%#
+                        [%%%%%%%%%%
+                      }%%%%%%%%%%%%%
+               #%%%%%%%%%%%%%%%%%##%%
+              %%%%%%%%%%%%%{{{#####{%
+              %%%%%%%%%{{{###%%%{###{#
+              [%%%%{{#{{{{#%%%%%%%%%%%%%%%%%%%%%%%%
+           %#%%%%%%%#%%%%%#%%%%%%%%%%%%%%%%%[
+      #%%%%%%%%%%%%#{{{{{{{{{{{{#{{{#{%%%{
+      %%%%%%%%%%{{{{%]%#     {{{{%{%%    %
+       %%%%%%%%%{{{{%       }{{{{%###%%#
+           %%#%#{{{{{{{##%#{{{{###{{{{%
+               [{{{{{{{{{{{{{%#####%%{########%}
+                {{{{{{{{{{{##################%%
+                {{{{{{{{%####%%########%
+                #{{{{{{{%##########%%{{%
+                %{{{{{{{{{{##%%#{{{{{{{{
+                %{{{{{{{{{{{{{{{{{{{{{{%
+                %{{{{{{{{{{{{{{{{{{{{{{%
+                %{{{{{{{{{{{{{{{{{{{{{{}
+                #{{{{{{{{{{{{{{{{{{{{{%
+                 [%{{{{{{{{{{{{{{{{#%
+                       %#%%%%%%%%["""
+
+
 def load_ascii_art() -> str:
-    """Returns ascii.txt in pure white."""
-    ascii_path = ROOT / "ascii.txt"
-    if not ascii_path.exists():
-        return ""
-    try:
-        raw_lines = [l.rstrip() for l in ascii_path.read_text(encoding="utf-8").splitlines() if l.strip()]
-    except Exception:
-        return ""
+    """Returns Perry the Platypus ASCII art in pure white."""
+    raw_lines = [l.rstrip() for l in PERRY_ASCII.splitlines() if l.strip()]
     return "\n".join(f"{WHITE}{line}{RESET}" for line in raw_lines)
 
 
