@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/M3h7rCa.png" width="320" alt="AgentP Logo">
+  <img src="https://i.imgur.com/lRxLymA.png" width="320" alt="AgentP Logo">
 </p>
 
 <h1 align="center">@tamgallc/agentp</h1>

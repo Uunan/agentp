@@ -1,6 +1,6 @@
 {
   "name": "@tamgallc/agentp",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "AgentP - Local PII Redaction & Fake-Swap Privacy Proxy for Code Agents (OpenCode, Claude Code, Cursor, Antigravity)",
   "main": "bin/agentp.js",
   "bin": {
