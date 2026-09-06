@@ -90,6 +90,23 @@ def _prompt(text: str, default: str = "") -> str:
     return val if val else default
 
 
+def _prompt_secret(text: str, current_value: str = "") -> str:
+    """Prompt user for a secret API key without printing the full key in plaintext."""
+    if current_value:
+        masked = current_value[:6] + "..." + current_value[-4:] if len(current_value) > 12 else "••••••••"
+        default_str = f" {GRAY}[Current: {masked} - Press Enter to keep]{RESET}"
+    else:
+        default_str = f" {GRAY}[sk-...]{RESET}"
+
+    try:
+        val = input(f"{CYAN}{text}{default_str}{CYAN}: {RESET}").strip()
+    except (KeyboardInterrupt, EOFError):
+        print(f"\n{YELLOW}Cancelled.{RESET}")
+        sys.exit(0)
+
+    return val if val else current_value
+
+
 def setup_wizard(force: bool = False):
     """Initial setup wizard: configure endpoint, api key, model and coding agent integrations."""
     os.system("")
@@ -113,7 +130,7 @@ def setup_wizard(force: bool = False):
     cur_port = str(srv.get("port", 8000))
 
     base_url = _prompt("[1/4] Upstream Base URL", cur_base)
-    api_key = _prompt("[2/4] Upstream API Key (Secret Key)", cur_api_key or "sk-...")
+    api_key = _prompt_secret("[2/4] Upstream API Key (Secret Key)", cur_api_key)
     model_name = _prompt("[3/4] Upstream Model Name", cur_model)
     port_str = _prompt("[4/4] Local Proxy Port", cur_port)
     port = int(port_str) if port_str.isdigit() else 8000
