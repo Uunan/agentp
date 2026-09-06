@@ -1,0 +1,33 @@
+{
+  "active_model": "tamga-ner-b",
+  "threshold": 0.6,
+  "scan_roles": [
+    "user",
+    "assistant",
+    "system",
+    "tool",
+    "function"
+  ],
+  "labels": {
+    "NAME": {
+      "enabled": false,
+      "strategy": "mask"
+    },
+    "LOCATION": {
+      "enabled": false,
+      "strategy": "mask"
+    },
+    "NUMBER": {
+      "enabled": false,
+      "strategy": "mask"
+    },
+    "CONTACT": {
+      "enabled": false,
+      "strategy": "mask"
+    },
+    "API": {
+      "enabled": true,
+      "strategy": "fake"
+    }
+  }
+}

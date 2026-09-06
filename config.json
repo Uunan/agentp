@@ -1,0 +1,25 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8000
+  },
+  "upstream": {
+    "base_url": "https://integrate.api.nvidia.com/v1",
+    "api_key_env": "NVIDIA_API_KEY",
+    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "timeout_s": 120
+  },
+  "models": {
+    "tamga-ner-b": {
+      "path": "models/tamga-ner-b",
+      "labels": [
+        "NAME",
+        "LOCATION",
+        "NUMBER",
+        "CONTACT",
+        "API"
+      ],
+      "threshold": 0.6
+    }
+  }
+}

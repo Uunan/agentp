@@ -1,0 +1,42 @@
+{
+  "name": "@tamgallc/agentp",
+  "version": "1.0.7",
+  "description": "AgentP - Local PII Redaction & Fake-Swap Privacy Proxy for Code Agents (OpenCode, Claude Code, Cursor, Antigravity)",
+  "main": "bin/agentp.js",
+  "bin": {
+    "agentp": "bin/agentp.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "bin",
+    "agentp",
+    "ascii.txt",
+    "config.json",
+    "model_config.json",
+    "requirements.txt",
+    "AgentP.png",
+    "hero.png",
+    "README.md",
+    "models/tamga-ner-b"
+  ],
+  "keywords": [
+    "privacy",
+    "pii-redaction",
+    "proxy",
+    "security",
+    "opencode",
+    "claude-code",
+    "cursor",
+    "antigravity",
+    "llm-privacy",
+    "tamgallc"
+  ],
+  "author": "Tamga LLC <contact@tamga.io>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uunan/agentp.git"
+  }
+}

@@ -1,0 +1,7 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+transformers>=4.40
+tokenizers>=0.19
+httpx>=0.27
+# torch'u CUDA destegiyle ayri kurun (ornek):
+# pip install torch --index-url https://download.pytorch.org/whl/cu126
