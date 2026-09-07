@@ -17,6 +17,11 @@ class NerEngine:
             cand = ROOT / p
             if cand.exists():
                 p = cand
+        if not p.exists() or not (p / "model.safetensors").exists():
+            from huggingface_hub import snapshot_download
+            print(f"[AgentP] Local model weights not found. Downloading from Hugging Face (Uunan/tamga-ner-b)...")
+            downloaded = snapshot_download(repo_id="Uunan/tamga-ner-b")
+            p = Path(downloaded)
         self.dir = p
         self.tok = PreTrainedTokenizerFast(
             tokenizer_file=str(self.dir / "tokenizer.json"), **SPECIALS)
